@@ -153,5 +153,8 @@
         }
       ]
     ]
+  },
+  "dependencies": {
+    "react-native-ble-manager": "^7.6.0"
   }
 }

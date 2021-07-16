@@ -1,5 +1,3 @@
-export default {
-  multiply(a: number, b: number) {
-    return Promise.resolve(a * b);
-  },
-};
+import BleModule from './BleModule.js';
+import BleProtocol from './BleProtocol.js';
+export { BleModule, BleProtocol };

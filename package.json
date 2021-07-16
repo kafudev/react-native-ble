@@ -1,5 +1,5 @@
 {
-  "name": "react-native-ble",
+  "name": "@kafudev/react-native-ble",
   "version": "0.1.0",
   "description": "react-native低功耗蓝牙通信",
   "main": "lib/commonjs/index",
@@ -26,7 +26,8 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
-    "release": "release-it",
+    "release": "dotenv -- release-it",
+    "release-ci": "dotenv -- release-it --ci",
     "example": "yarn --cwd example",
     "pods": "cd example && pod-install --quiet",
     "bootstrap": "yarn example && yarn && yarn pods"
@@ -44,7 +45,8 @@
   },
   "homepage": "https://github.com/kafudev/react-native-ble#readme",
   "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^11.0.0",
@@ -95,6 +97,7 @@
       "tagName": "v${version}"
     },
     "npm": {
+      "skipChecks": true,
       "publish": true
     },
     "github": {
@@ -127,7 +130,8 @@
   },
   "eslintIgnore": [
     "node_modules/",
-    "lib/"
+    "lib/",
+    "example/"
   ],
   "prettier": {
     "quoteProps": "consistent",
